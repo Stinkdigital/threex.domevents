@@ -451,7 +451,7 @@ THREEx.DomEvents.prototype._onTouchEnd	= function(event){ return this._onTouchEv
 
 THREEx.DomEvents.prototype._onTouchMove	= function(domEvent)
 {
-	if( domEvent.touches.length != 1 )	return undefined;
+	if( typeof domEvent === 'undefined' || domEvent.touches.length != 1 )	return undefined;
 
 	domEvent.preventDefault();
 
@@ -464,7 +464,7 @@ THREEx.DomEvents.prototype._onTouchMove	= function(domEvent)
 
 THREEx.DomEvents.prototype._onTouchEvent	= function(eventName, domEvent)
 {
-	if( domEvent.touches.length != 1 )	return undefined;
+	if( typeof domEvent === 'undefined' || domEvent.touches.length != 1 )	return undefined;
 
 	domEvent.preventDefault();
 
