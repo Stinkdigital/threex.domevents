@@ -452,8 +452,6 @@ THREEx.DomEvents.prototype._onTouchMove	= function(domEvent)
 {
 	if( typeof domEvent === 'undefined' || domEvent.touches.length != 1 )	return undefined;
 
-	domEvent.preventDefault();
-
 	var mouseX	= +(domEvent.touches[ 0 ].pageX / window.innerWidth ) * 2 - 1;
 	var mouseY	= -(domEvent.touches[ 0 ].pageY / window.innerHeight) * 2 + 1;
 	this._onMove('mousemove', mouseX, mouseY, domEvent);
@@ -464,8 +462,6 @@ THREEx.DomEvents.prototype._onTouchMove	= function(domEvent)
 THREEx.DomEvents.prototype._onTouchEvent	= function(eventName, domEvent)
 {
 	if( typeof domEvent === 'undefined' || domEvent.touches.length != 1 )	return undefined;
-
-	domEvent.preventDefault();
 
 	var mouseX	= +(domEvent.touches[ 0 ].pageX / window.innerWidth ) * 2 - 1;
 	var mouseY	= -(domEvent.touches[ 0 ].pageY / window.innerHeight) * 2 + 1;
